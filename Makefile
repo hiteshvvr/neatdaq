@@ -40,7 +40,7 @@ OSFLAGS = -DOS_LINUX -Dextname -DLINUX
 CFLAGS = -g -O2 -Wall -fpermissive
 # add to compile in 32-bit mode
 # OSFLAGS += -m32
-LIBS = -lm -lz -lutil -lnsl -lpthread -lrt -l CAENVME
+LIBS = -lm -lz -lutil -lnsl -lpthread -lrt -l CAENVME -lCAENComm 
 endif
 
 #-----------------------
@@ -96,7 +96,7 @@ SRC_DIR   = $(MIDASSYS)/src
 # Hardware driver can be (camacnul, kcs2926, kcs2927, hyt1331)
 #
 DRIVER = camacnul
-CAENINC = /usr/include/CAENVMElib.h /usr/include/CAENVMEtypes.h /usr/include/CAENVMEoslib.h
+CAENINC = /usr/include/CAENVMElib.h /usr/include/CAENVMEtypes.h /usr/include/CAENVMEoslib.h /usr/include/CAENComm.h
 
 #OBJ = $(CAENINC) v2718.o v965.o v1190B.o v792.o v262.o v1290N.o MQDC.o v812.o #pvmeMidassub.o vmicvme.o v767.o
 OBJ = $(CAENINC) v2718.o  v1190B.o v2495.o v1290N.o v1720.o v812.o #pvmeMidassub.o vmicvme.o v767.o
@@ -207,8 +207,12 @@ v2495.o: $(VME_DIR)/v2495.c
 v1290N.o: $(VME_DIR)/v1290N.c
 	$(CC) $(CFLAGS) $(OSFLAGS) -Wno-unused-but-set-variable -Wno-unused-variable -o $@ -c $<
 
-v1720.o: $(VME_DIR)/v1720.c
+v1720.o: ./v1720.c
 	$(CC) $(CFLAGS) $(OSFLAGS) -Wno-unused-but-set-variable -Wno-unused-variable -o $@ -c $<
+
+v2718.o: ./v2718.c
+	$(CC) $(CFLAGS) $(OSFLAGS) -Wno-unused-but-set-variable -Wno-unused-variable -o $@ -c $<
+
 
 v812.o: $(VME_DIR)/v812.c
 	$(CC) $(CFLAGS) $(OSFLAGS) -Wno-unused-but-set-variable -Wno-unused-variable -o $@ -c $<

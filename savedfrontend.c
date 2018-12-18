@@ -403,7 +403,7 @@ INT read_trigger_event(char *pevent, INT off)
 
     mvme_set_am(myvme, MVME_AM_A32_ND); //set addressing mode to A32 non-privileged data
     mvme_set_dmode(myvme, MVME_DMODE_D32);
-    mvme_set_blt(myvme, MVME_BLT_BLT32);
+    mvme_set_blt(myvme, MVME_BLT_NONE);
     int InpDat = v1720_RegisterRead(myvme, V1720_BASE_ADDR, V1720_VME_STATUS);
     InpDat = InpDat & 0x00000001;
 
@@ -450,16 +450,21 @@ INT read_trigger_event(char *pevent, INT off)
                     printf("\n\n\n\nBLT REad Message::%d\n", readmsg);
                     printf("Cycles Requ:: %d \t Cycles READ:: %d \n", bytes_totransfer, bytes_transferred);
                 }
+
                 cycle++;
             }
+
+
+
         }
+
     }
 
 
 
 
-//       dtemp = v1720_DataRead(myvme, V1720_BASE_ADDR, ddata, 8);
-//       ddata += dtemp;
+    //   dtemp = v1720_DataRead(myvme, V1720_BASE_ADDR, ddata, 8);
+    //   ddata += dtemp;
 
     // int aaa = CAENVME_BLTReadCycle((long *)myvme->info, V1720_BASE_ADDR+V1720_EVENT_READOUT_BUFFER, ddata, size_of_evt*4,cvA32_U_BLT,0x04,&transffered_cycles);
 
@@ -473,6 +478,45 @@ INT read_trigger_event(char *pevent, INT off)
 
     bk_close(pevent, ddata);
 #endif
+
+    //-----------------Take Data of TDC'S----------------------------------//
+    // #if defined V1290_CODE
+    //     nentry = 0;
+    //     nextra = 0;
+    //     fevtcnt = 0;
+
+    // bk_create(pevent, "TDC", TID_DWORD, &tdata);       // Create data bank for TDC
+
+    // v1290_EventRead(myvme, V1290N_BASE_ADDR, tdata, &nentry);
+    // tdata += nentry;
+
+    // // understand this part of the data taking code
+    // fevtcnt = v1290_EvtCounter(myvme, V1290N_BASE_ADDR);
+    // temp = 0xaa000000 + (fevtcnt & 0xffffff);
+    // *tdata++ = temp;
+
+    //  check if there are any additional events in TDC, If they are available,
+    //  *  then put the flag and number of extra events
+
+    // while(v1290_DataReady(myvme, V1290N_BASE_ADDR))
+    // {
+    //     nextra++;
+    // v1290_EventRead(myvme, V1290N_BASE_ADDR, tdata, &dummyevent);
+    // }
+    // // THIS part is also confusing
+    // if (nextra>0)
+    // {
+    //     if(evtdebug)
+    //  //     printf("ERROR Multiple Events in 1290: N words in FIFO = %d, Event Num = %d\n",nextra,fevtcnt);
+    //     temp = 0xdcfe0000 + (nextra & 0x7ff);
+    //     *tdata++ = temp;
+    //     temp = 0xbad0cafe;
+    //     *tdata++ = temp;
+    // }
+
+    // bk_close(pevent, tdata);
+
+    // #endif
 
 
     //-----------------Bank for DAQ event counter----------------------------------//

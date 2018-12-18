@@ -1,0 +1,15 @@
+{
+	"folders":
+	[
+		{
+            "path": "/home/neatdaq/NewDaq/development/frontend/digitizer/1720/"
+		},
+        {
+            "path": "/home/neatdaq/NewDaq/online",
+        }
+	],
+    "settings":
+    {
+            "wrap_width": 110,
+    }
+}

@@ -1,0 +1,4 @@
+09:47:34.320 2018/11/14 [ODBEdit,ERROR] [odb.c:1310:db_open_database,ERROR] Different database format: Shared memory is 54854480, program is 3
+09:47:36.331 2018/11/14 [Logger,ERROR] [odb.c:1310:db_open_database,ERROR] Different database format: Shared memory is 54854480, program is 3
+09:48:19.056 2018/11/14 [ODBEdit,ERROR] [odb.c:1180:db_open_database,ERROR] invalid database size
+09:48:22.976 2018/11/14 [ODBEdit,ERROR] [odb.c:1310:db_open_database,ERROR] Different database format: Shared memory is 54854480, program is 3

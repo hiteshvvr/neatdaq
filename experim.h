@@ -17,7 +17,7 @@
                 tation which can be used in the db_create_record function
                 to setup an ODB structure which matches the C structure.
 
-  Created on:   Thu Aug 30 14:25:59 2018
+  Created on:   Tue Nov  6 14:03:49 2018
 
 \********************************************************************/
 
@@ -82,18 +82,73 @@ typedef struct {
     INT       fpgalatewindow;
     INT       fpgavalidevents;
   } v2495;
+  struct {
+    struct {
+      INT       bufferorganization;
+      INT       triggersource[4];
+      INT       posttriggersamples;
+      INT       acquisitioncontrol;
+    } boardsettings;
+    struct {
+      INT       enable[9];
+      float     dcoffset[9];
+      float     threshold[9];
+    } channelsettings;
+  } v1720;
 } TRIGGER_SETTINGS;
 
 #define TRIGGER_SETTINGS_STR(_name) const char *_name[] = {\
 "[v1290]",\
-"TDCWidth = INT : 2000",\
-"TDCOffset = INT : -5000",\
+"TDCWidth = INT : 4000",\
+"TDCOffset = INT : -4025",\
 "TDCResolution = INT : 0",\
 "",\
 "[v2495]",\
-"FPGAEarlyWindow = INT : 6",\
-"FPGALateWindow = INT : 22",\
+"FPGAEarlyWindow = INT : 10",\
+"FPGALateWindow = INT : 200",\
 "FPGAValidEvents = INT : 16169",\
+"",\
+"[v1720/BoardSettings]",\
+"BufferOrganization = INT : 10",\
+"TriggerSource = INT[4] :",\
+"[0] 0",\
+"[1] 0",\
+"[2] 0",\
+"[3] 0",\
+"PostTriggerSamples = INT : 0",\
+"AcquisitionControl = INT : 0",\
+"",\
+"[v1720/ChannelSettings]",\
+"Enable = INT[9] :",\
+"[0] 1",\
+"[1] 0",\
+"[2] 0",\
+"[3] 0",\
+"[4] 0",\
+"[5] 0",\
+"[6] 0",\
+"[7] 0",\
+"[8] 0",\
+"DCOffset = FLOAT[9] :",\
+"[0] 0",\
+"[1] 0",\
+"[2] 0",\
+"[3] 0",\
+"[4] 0",\
+"[5] 0",\
+"[6] 0",\
+"[7] 0",\
+"[8] 0",\
+"Threshold = FLOAT[9] :",\
+"[0] 0",\
+"[1] 0",\
+"[2] 0",\
+"[3] 0",\
+"[4] 0",\
+"[5] 0",\
+"[6] 0",\
+"[7] 0",\
+"[8] 0",\
 "",\
 NULL }
 
@@ -161,8 +216,8 @@ typedef struct {
 #define PERIODIC_DISPLAY_STR(_name) const char *_name[] = {\
 "[v2495]",\
 "TrigFreq = INT : 65535",\
-"ElecFreq = INT : 43900",\
-"IonFreq = INT : 12716",\
+"ElecFreq = INT : 41182",\
+"IonFreq = INT : 24567",\
 "FPGARevNo = INT : 0",\
 "",\
 NULL }

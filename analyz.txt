@@ -1,0 +1,337 @@
+gcc -g -O2 -Wall -fpermissive -g -I/home/neatdaq/NewDaq/packages/midas/include -I/home/neatdaq/NewDaq/packages/midas/drivers/vme -I/home/neatdaq/NewDaq/packages/midas/drivers/vme/vmic   -c -o v2718.o v2718.c
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+v2718.c: In function ‘mvme_open’:
+v2718.c:112:19: warning: assignment makes pointer from integer without a cast [-Wint-conversion]
+     (*mvme)->info = BHandle;
+                   ^
+v2718.c: In function ‘mvme_close’:
+v2718.c:129:14: warning: variable ‘table’ set but not used [-Wunused-but-set-variable]
+   VME_TABLE *table;
+              ^
+v2718.c: In function ‘mvme_read’:
+v2718.c:174:24: warning: passing argument 1 of ‘CAENVME_BLTReadCycle’ makes integer from pointer without a cast [-Wint-conversion]
+   CAENVME_BLTReadCycle((long *)mvme->info,addr,dst,TSize,cvA32_U_BLT,0x04,&count);
+                        ^
+In file included from v2718.h:17:0,
+                 from v2718.c:27:
+/usr/include/CAENVMElib.h:289:1: note: expected ‘int32_t {aka int}’ but argument is of type ‘long int *’
+ CAENVME_BLTReadCycle(int32_t Handle, uint32_t Address, void *Buffer,
+ ^
+v2718.c: In function ‘mvme_read_value’:
+v2718.c:218:26: warning: passing argument 1 of ‘CAENVME_ReadCycle’ makes integer from pointer without a cast [-Wint-conversion]
+   Stat=CAENVME_ReadCycle((long *)mvme->info,(unsigned long)addr,&dst,mvme->am,DM);
+                          ^
+In file included from v2718.h:17:0,
+                 from v2718.c:27:
+/usr/include/CAENVMElib.h:180:1: note: expected ‘int32_t {aka int}’ but argument is of type ‘long int *’
+ CAENVME_ReadCycle(int32_t Handle, uint32_t Address, void *Data,
+ ^
+v2718.c:192:21: warning: unused variable ‘AM’ [-Wunused-variable]
+   CVAddressModifier AM;
+                     ^
+v2718.c: In function ‘mvme_write_value’:
+v2718.c:257:12: warning: unused variable ‘value_c’ [-Wunused-variable]
+       char value_c = (char)value;
+            ^
+v2718.c:269:24: warning: passing argument 1 of ‘CAENVME_WriteCycle’ makes integer from pointer without a cast [-Wint-conversion]
+     CAENVME_WriteCycle((long*)mvme->info,addr,&value_w,mvme->am,mvme->dmode);
+                        ^
+In file included from v2718.h:17:0,
+                 from v2718.c:27:
+/usr/include/CAENVMElib.h:222:1: note: expected ‘int32_t {aka int}’ but argument is of type ‘long int *’
+ CAENVME_WriteCycle(int32_t Handle, uint32_t Address, void *Data,
+ ^
+v2718.c:280:24: warning: passing argument 1 of ‘CAENVME_WriteCycle’ makes integer from pointer without a cast [-Wint-conversion]
+     CAENVME_WriteCycle((long*)mvme->info,addr,&value_dw,mvme->am,DM);
+                        ^
+In file included from v2718.h:17:0,
+                 from v2718.c:27:
+/usr/include/CAENVMElib.h:222:1: note: expected ‘int32_t {aka int}’ but argument is of type ‘long int *’
+ CAENVME_WriteCycle(int32_t Handle, uint32_t Address, void *Data,
+ ^
+gcc -g -O2 -Wall -fpermissive -g -I/home/neatdaq/NewDaq/packages/midas/include -I/home/neatdaq/NewDaq/packages/midas/drivers/vme -I/home/neatdaq/NewDaq/packages/midas/drivers/vme/vmic -DOS_LINUX -Dextname -DLINUX -Wno-unused-but-set-variable -Wno-unused-variable -o v1190B.o -c /home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c: In function ‘v1190_MicroWrite’:
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:414:7: warning: implicit declaration of function ‘usleep’ [-Wimplicit-function-declaration]
+       usleep(1000000);
+       ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c: In function ‘main1190B’:
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:679:32: warning: passing argument 2 of ‘mvme_read_value’ makes integer from pointer without a cast [-Wint-conversion]
+   csr = mvme_read_value(myvme, pointerV1190, V1190_FIRM_REV_RO);
+                                ^
+In file included from /home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.h:12:0,
+                 from /home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:12:
+/home/neatdaq/NewDaq/packages/midas/include/mvmestd.h:254:20: note: expected ‘mvme_addr_t {aka unsigned int}’ but argument is of type ‘char *’
+ unsigned int EXPRT mvme_read_value(MVME_INTERFACE *vme, mvme_addr_t vme_addr, mvme_locaddr_t vme_off);
+                    ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:683:23: warning: passing argument 2 of ‘v1190_Status’ makes integer from pointer without a cast [-Wint-conversion]
+   v1190_Status(myvme, pointerV1190);
+                       ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:540:5: note: expected ‘DWORD {aka unsigned int}’ but argument is of type ‘char *’
+ int v1190_Status(MVME_INTERFACE *mvme, DWORD base)
+     ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:686:22: warning: passing argument 2 of ‘v1190_Setup’ makes integer from pointer without a cast [-Wint-conversion]
+   v1190_Setup(myvme, pointerV1190, 1);
+                      ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:488:6: note: expected ‘DWORD {aka unsigned int}’ but argument is of type ‘char *’
+ int  v1190_Setup(MVME_INTERFACE *mvme, DWORD base, int mode)
+      ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:688:32: warning: passing argument 2 of ‘v1190_DataReady’ makes integer from pointer without a cast [-Wint-conversion]
+   csr = v1190_DataReady(myvme, pointerV1190);
+                                ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:187:6: note: expected ‘DWORD {aka unsigned int}’ but argument is of type ‘char *’
+ int  v1190_DataReady(MVME_INTERFACE *mvme, DWORD base)
+      ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:692:33: warning: passing argument 2 of ‘v1190_EvtCounter’ makes integer from pointer without a cast [-Wint-conversion]
+   cnt = v1190_EvtCounter(myvme, (char *)pointerV1190);
+                                 ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:211:6: note: expected ‘DWORD {aka unsigned int}’ but argument is of type ‘char *’
+ int  v1190_EvtCounter(MVME_INTERFACE *mvme, DWORD base)
+      ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:693:10: warning: format ‘%lx’ expects argument of type ‘long unsigned int’, but argument 2 has type ‘DWORD {aka unsigned int}’ [-Wformat=]
+   printf("Event counter: 0x%lx\n", cnt);
+          ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:709:25: warning: passing argument 2 of ‘v1190_DataRead’ makes integer from pointer without a cast [-Wint-conversion]
+   v1190_DataRead(myvme, (char *)pointerV1190, array, 500);
+                         ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:113:5: note: expected ‘DWORD {aka unsigned int}’ but argument is of type ‘char *’
+ int v1190_DataRead(MVME_INTERFACE *mvme, DWORD base, DWORD *pdest, int nentry)
+     ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:715:12: warning: format ‘%lx’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘DWORD {aka unsigned int}’ [-Wformat=]
+     printf("Data[%i]=0x%lx\n", i, array[i]);
+            ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1190B.c:679:9: warning: ‘pointerV1190’ is used uninitialized in this function [-Wuninitialized]
+   csr = mvme_read_value(myvme, pointerV1190, V1190_FIRM_REV_RO);
+         ^
+gcc -g -O2 -Wall -fpermissive -g -I/home/neatdaq/NewDaq/packages/midas/include -I/home/neatdaq/NewDaq/packages/midas/drivers/vme -I/home/neatdaq/NewDaq/packages/midas/drivers/vme/vmic -DOS_LINUX -Dextname -DLINUX -Wno-unused-but-set-variable -Wno-unused-variable -o v2495.o -c /home/neatdaq/NewDaq/packages/midas/drivers/vme/v2495.c
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+gcc -g -O2 -Wall -fpermissive -g -I/home/neatdaq/NewDaq/packages/midas/include -I/home/neatdaq/NewDaq/packages/midas/drivers/vme -I/home/neatdaq/NewDaq/packages/midas/drivers/vme/vmic -DOS_LINUX -Dextname -DLINUX -Wno-unused-but-set-variable -Wno-unused-variable -o v1290N.o -c /home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c: In function ‘v1290_WidthSet’:
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:358:3: warning: implicit declaration of function ‘usleep’ [-Wimplicit-function-declaration]
+   usleep(310000);
+   ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c: In function ‘v1290_Setup’:
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:537:13: warning: implicit declaration of function ‘v1190_MicroWrite’ [-Wimplicit-function-declaration]
+     value = v1190_MicroWrite(mvme, base, V1290_SET_SW_MARGIN_W0);
+             ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c: In function ‘main1290N’:
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:704:32: warning: passing argument 2 of ‘mvme_read_value’ makes integer from pointer without a cast [-Wint-conversion]
+   csr = mvme_read_value(myvme, pointerV1290, V1290_FIRM_REV_RO);
+                                ^
+In file included from /home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.h:11:0,
+                 from /home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:14:
+/home/neatdaq/NewDaq/packages/midas/include/mvmestd.h:254:20: note: expected ‘mvme_addr_t {aka unsigned int}’ but argument is of type ‘char *’
+ unsigned int EXPRT mvme_read_value(MVME_INTERFACE *vme, mvme_addr_t vme_addr, mvme_locaddr_t vme_off);
+                    ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:708:23: warning: passing argument 2 of ‘v1290_Status’ makes integer from pointer without a cast [-Wint-conversion]
+   v1290_Status(myvme, pointerV1290);
+                       ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:569:5: note: expected ‘DWORD {aka unsigned int}’ but argument is of type ‘char *’
+ int v1290_Status(MVME_INTERFACE *mvme, DWORD base)
+     ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:711:22: warning: passing argument 2 of ‘v1290_Setup’ makes integer from pointer without a cast [-Wint-conversion]
+   v1290_Setup(myvme, pointerV1290, 1);
+                      ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:506:6: note: expected ‘DWORD {aka unsigned int}’ but argument is of type ‘char *’
+ int  v1290_Setup(MVME_INTERFACE *mvme, DWORD base, int mode)
+      ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:713:32: warning: passing argument 2 of ‘v1290_DataReady’ makes integer from pointer without a cast [-Wint-conversion]
+   csr = v1290_DataReady(myvme, pointerV1290);
+                                ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:198:6: note: expected ‘DWORD {aka unsigned int}’ but argument is of type ‘char *’
+ int  v1290_DataReady(MVME_INTERFACE *mvme, DWORD base)
+      ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:717:33: warning: passing argument 2 of ‘v1290_EvtCounter’ makes integer from pointer without a cast [-Wint-conversion]
+   cnt = v1290_EvtCounter(myvme, pointerV1290);
+                                 ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:222:6: note: expected ‘DWORD {aka unsigned int}’ but argument is of type ‘char *’
+ int  v1290_EvtCounter(MVME_INTERFACE *mvme, DWORD base)
+      ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:718:10: warning: format ‘%lx’ expects argument of type ‘long unsigned int’, but argument 2 has type ‘DWORD {aka unsigned int}’ [-Wformat=]
+   printf("Event counter: 0x%lx\n", cnt);
+          ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:734:25: warning: passing argument 2 of ‘v1290_DataRead’ makes integer from pointer without a cast [-Wint-conversion]
+   v1290_DataRead(myvme, pointerV1290, array, 500);
+                         ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:114:5: note: expected ‘DWORD {aka unsigned int}’ but argument is of type ‘char *’
+ int v1290_DataRead(MVME_INTERFACE *mvme, DWORD base, DWORD *pdest, int *nentry)
+     ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:734:46: warning: passing argument 4 of ‘v1290_DataRead’ makes pointer from integer without a cast [-Wint-conversion]
+   v1290_DataRead(myvme, pointerV1290, array, 500);
+                                              ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:114:5: note: expected ‘int *’ but argument is of type ‘int’
+ int v1290_DataRead(MVME_INTERFACE *mvme, DWORD base, DWORD *pdest, int *nentry)
+     ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:740:12: warning: format ‘%lx’ expects argument of type ‘long unsigned int’, but argument 3 has type ‘DWORD {aka unsigned int}’ [-Wformat=]
+     printf("Data[%i]=0x%lx\n", i, array[i]);
+            ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:704:9: warning: ‘pointerV1290’ is used uninitialized in this function [-Wuninitialized]
+   csr = mvme_read_value(myvme, pointerV1290, V1290_FIRM_REV_RO);
+         ^
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c: In function ‘v1290_DataRead’:
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c:130:16: warning: ‘count’ may be used uninitialized in this function [-Wmaybe-uninitialized]
+   *nentry=count/4;
+                ^
+gcc -g -O2 -Wall -fpermissive -g -I/home/neatdaq/NewDaq/packages/midas/include -I/home/neatdaq/NewDaq/packages/midas/drivers/vme -I/home/neatdaq/NewDaq/packages/midas/drivers/vme/vmic -DOS_LINUX -Dextname -DLINUX -Wno-unused-but-set-variable -Wno-unused-variable -o v1720.o -c v1720.c
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+gcc -g -O2 -Wall -fpermissive -g -I/home/neatdaq/NewDaq/packages/midas/include -I/home/neatdaq/NewDaq/packages/midas/drivers/vme -I/home/neatdaq/NewDaq/packages/midas/drivers/vme/vmic -DOS_LINUX -Dextname -DLINUX -Wno-unused-but-set-variable -Wno-unused-variable -o v812.o -c /home/neatdaq/NewDaq/packages/midas/drivers/vme/v812.c
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v812.c: In function ‘v812_SetTh’:
+/home/neatdaq/NewDaq/packages/midas/drivers/vme/v812.c:42:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+gcc -g -O2 -Wall -fpermissive -g -I/home/neatdaq/NewDaq/packages/midas/include -I/home/neatdaq/NewDaq/packages/midas/drivers/vme -I/home/neatdaq/NewDaq/packages/midas/drivers/vme/vmic -DOS_LINUX -Dextname -DLINUX -c -o camacnul.o /home/neatdaq/NewDaq/packages/midas/drivers/camac/camacnul.c
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+gcc -g -O2 -Wall -fpermissive -g -I/home/neatdaq/NewDaq/packages/midas/include -I/home/neatdaq/NewDaq/packages/midas/drivers/vme -I/home/neatdaq/NewDaq/packages/midas/drivers/vme/vmic -DOS_LINUX -Dextname -DLINUX -o frontend frontend.c \
+/home/neatdaq/NewDaq/packages/midas/src/cnaf_callback.c /usr/include/CAENVMElib.h /usr/include/CAENVMEtypes.h /usr/include/CAENVMEoslib.h v2718.o  v1190B.o v2495.o v1290N.o v1720.o v812.o  camacnul.o /home/neatdaq/NewDaq/packages/midas/linux/lib/mfe.o /home/neatdaq/NewDaq/packages/midas/linux/lib/libmidas.a \
+-lm -lz -lutil -lnsl -lpthread -lrt -l CAENVME #libpvic.a
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+frontend.c: In function ‘frontend_init’:
+frontend.c:74:22: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  CAENVME_DeviceReset((int) myvme->info);
+                      ^
+frontend.c:75:24: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  CAENVME_SetOutputConf((int) myvme->info, cvOutput0,cvDirect,cvDirect,cvManualSW);
+                        ^
+frontend.c:76:24: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  CAENVME_SetOutputConf((int) myvme->info, cvOutput1,cvDirect,cvDirect,cvManualSW);
+                        ^
+frontend.c:77:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  CAENVME_SetOutputRegister((int) myvme->info, cvOut0Bit);
+                            ^
+frontend.c:78:28: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  CAENVME_SetOutputRegister((int) myvme->info, cvOut1Bit);
+                            ^
+frontend.c:80:23: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  CAENVME_SetInputConf((int) myvme->info, cvInput0, cvDirect, cvDirect);
+                       ^
+frontend.c:83:23: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  CAENVME_ReadRegister((int) myvme->info,0x0B,&InpDat);
+                       ^
+frontend.c:86:23: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+  CAENVME_ReadRegister((int) myvme->info, cvInputReg, &InpDat);
+                       ^
+frontend.c:108:3: warning: implicit declaration of function ‘v1720_Status’ [-Wimplicit-function-declaration]
+   v1720_Status(myvme,V1720_BASE_ADDR);
+   ^
+frontend.c:110:9: warning: implicit declaration of function ‘v1720_RegisterRead’ [-Wimplicit-function-declaration]
+   bad = v1720_RegisterRead(myvme, V1720_BASE_ADDR, 0xF080);
+         ^
+frontend.c:118:3: warning: implicit declaration of function ‘v1720_Reset’ [-Wimplicit-function-declaration]
+   v1720_Reset(myvme, V1720_BASE_ADDR);
+   ^
+frontend.c:121:3: warning: implicit declaration of function ‘v1720_Setup’ [-Wimplicit-function-declaration]
+   v1720_Setup(myvme, V1720_BASE_ADDR, 0x3);
+   ^
+frontend.c:167:5: warning: implicit declaration of function ‘v1720_ChannelThresholdSet’ [-Wimplicit-function-declaration]
+     v1720_ChannelThresholdSet(myvme, V1720_BASE_ADDR, i, 0x050);
+     ^
+frontend.c:128:5: warning: unused variable ‘gemlatch’ [-Wunused-variable]
+ int gemlatch=9;   // I do not understand the use of this function
+     ^
+frontend.c: In function ‘begin_of_run’:
+frontend.c:218:3: warning: implicit declaration of function ‘v1720_ChannelConfig’ [-Wimplicit-function-declaration]
+   v1720_ChannelConfig(myvme,V1720_BASE_ADDR,0x2);
+   ^
+frontend.c:227:3: warning: implicit declaration of function ‘v1720_SingleSetting’ [-Wimplicit-function-declaration]
+   v1720_SingleSetting(myvme, V1720_BASE_ADDR, V1720_POST_TRIGGER_SETTING, 80);
+   ^
+frontend.c:256:1: warning: implicit declaration of function ‘v1720_AcqCtl’ [-Wimplicit-function-declaration]
+ v1720_AcqCtl(myvme, V1720_BASE_ADDR, V1720_RUN_START);
+ ^
+frontend.c:198:10: warning: unused variable ‘threshold’ [-Wunused-variable]
+     WORD threshold[32];
+          ^
+frontend.c:197:25: warning: unused variable ‘evtcnt’ [-Wunused-variable]
+     int i, csr, status, evtcnt;
+                         ^
+frontend.c:197:17: warning: unused variable ‘status’ [-Wunused-variable]
+     int i, csr, status, evtcnt;
+                 ^
+frontend.c: In function ‘poll_event’:
+frontend.c:331:9: warning: unused variable ‘latch’ [-Wunused-variable]
+     int latch = 0;
+         ^
+frontend.c: In function ‘read_trigger_event’:
+frontend.c:383:31: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     CAENVME_SetOutputRegister((int) myvme->info,cvOut0Bit);
+                               ^
+frontend.c:384:31: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     CAENVME_SetOutputRegister((int) myvme->info,cvOut1Bit);
+                               ^
+frontend.c:395:38: warning: passing argument 4 of ‘bk_create’ from incompatible pointer type [-Wincompatible-pointer-types]
+ bk_create(pevent, "DG01", TID_DWORD, &ddata);      // Create data bank for Digitizer
+                                      ^
+In file included from frontend.c:15:0:
+/home/neatdaq/NewDaq/packages/midas/include/midas.h:1874:15: note: expected ‘void **’ but argument is of type ‘DWORD ** {aka unsigned int **}’
+    void EXPRT bk_create(void *pbh, const char *name, WORD type, void **pdata);
+               ^
+frontend.c:402:9: warning: implicit declaration of function ‘v1720_DataBlockRead’ [-Wimplicit-function-declaration]
+ dtemp = v1720_DataBlockRead(myvme, V1720_BASE_ADDR, ddata, &dentry);
+         ^
+frontend.c:451:38: warning: passing argument 4 of ‘bk_create’ from incompatible pointer type [-Wincompatible-pointer-types]
+ bk_create(pevent, "EVNT", TID_DWORD, &evdata);
+                                      ^
+In file included from frontend.c:15:0:
+/home/neatdaq/NewDaq/packages/midas/include/midas.h:1874:15: note: expected ‘void **’ but argument is of type ‘DWORD ** {aka unsigned int **}’
+    void EXPRT bk_create(void *pbh, const char *name, WORD type, void **pdata);
+               ^
+frontend.c:458:31: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     CAENVME_SetOutputRegister((int) myvme->info,cvOut0Bit);
+                               ^
+frontend.c:459:31: warning: cast from pointer to integer of different size [-Wpointer-to-int-cast]
+     CAENVME_SetOutputRegister((int) myvme->info,cvOut1Bit);
+                               ^
+frontend.c:381:29: warning: variable ‘devtcnt’ set but not used [-Wunused-but-set-variable]
+     int dtemp,dentry,dextra,devtcnt;
+                             ^
+frontend.c:381:22: warning: variable ‘dextra’ set but not used [-Wunused-but-set-variable]
+     int dtemp,dentry,dextra,devtcnt;
+                      ^
+frontend.c:380:46: warning: unused variable ‘temp’ [-Wunused-variable]
+     int nentry, nextra, dummyevent, fevtcnt, temp;
+                                              ^
+frontend.c:380:37: warning: unused variable ‘fevtcnt’ [-Wunused-variable]
+     int nentry, nextra, dummyevent, fevtcnt, temp;
+                                     ^
+frontend.c:380:25: warning: unused variable ‘dummyevent’ [-Wunused-variable]
+     int nentry, nextra, dummyevent, fevtcnt, temp;
+                         ^
+frontend.c:380:17: warning: unused variable ‘nextra’ [-Wunused-variable]
+     int nentry, nextra, dummyevent, fevtcnt, temp;
+                 ^
+frontend.c:380:9: warning: unused variable ‘nentry’ [-Wunused-variable]
+     int nentry, nextra, dummyevent, fevtcnt, temp;
+         ^
+frontend.c:379:72: warning: unused variable ‘pdata4’ [-Wunused-variable]
+     DWORD *tdata, *ddata, *pdata1, *pdata2, *pdata3, *evdata, *pdata, *pdata4;
+                                                                        ^
+frontend.c:379:64: warning: unused variable ‘pdata’ [-Wunused-variable]
+     DWORD *tdata, *ddata, *pdata1, *pdata2, *pdata3, *evdata, *pdata, *pdata4;
+                                                                ^
+frontend.c:379:46: warning: unused variable ‘pdata3’ [-Wunused-variable]
+     DWORD *tdata, *ddata, *pdata1, *pdata2, *pdata3, *evdata, *pdata, *pdata4;
+                                              ^
+frontend.c:379:37: warning: unused variable ‘pdata2’ [-Wunused-variable]
+     DWORD *tdata, *ddata, *pdata1, *pdata2, *pdata3, *evdata, *pdata, *pdata4;
+                                     ^
+frontend.c:379:28: warning: unused variable ‘pdata1’ [-Wunused-variable]
+     DWORD *tdata, *ddata, *pdata1, *pdata2, *pdata3, *evdata, *pdata, *pdata4;
+                            ^
+frontend.c:379:12: warning: unused variable ‘tdata’ [-Wunused-variable]
+     DWORD *tdata, *ddata, *pdata1, *pdata2, *pdata3, *evdata, *pdata, *pdata4;
+            ^
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+/home/neatdaq/NewDaq/packages/midas/src/cnaf_callback.c: In function ‘cnaf_callback’:
+/home/neatdaq/NewDaq/packages/midas/src/cnaf_callback.c:26:15: warning: variable ‘b’ set but not used [-Wunused-but-set-variable]
+    DWORD cmd, b, c, n, a, f, *pdword, *size, *x, *q, dtemp;
+               ^
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+cc1: warning: command line option ‘-fpermissive’ is valid for C++/ObjC++ but not for C
+v1720.o: In function `v1720_DataBlockRead':
+/home/neatdaq/NewDaq/development/frontend/digitizer/1720/v1720.c:320: undefined reference to `CAENComm_BLTRead'
+collect2: error: ld returned 1 exit status
+Makefile:173: recipe for target 'frontend' failed
+make: *** [frontend] Error 1

@@ -1,18 +1,17 @@
+/** MAIN CHANGE IS frontend end name is now SARAF1
+Digitizer is refferred as  DG */
 #include "vmicvme.h"
 // #include "v2495.h"
 // #include "v965.h"
 // #include "qdc.h"
-#include "v1290N.h"
+#include "v1720.h"
 #include "v812.h"
-#include "v2495.h"
 
 
-#define V1290_CODE
-#define V2495_CODE
-// #define V812_CODE
+#define V1720_ROC_FW_VER	0x8124      /* R/W       ; D32 */ 
+#define V1720_CODE
 
 const int evtdebug = 1;
-
 
 #ifdef __cplusplus
 extern "C" {
@@ -22,7 +21,7 @@ extern "C" {
 /**********Globals*******************/
 
 /* THE frontend name (client name ) as seen by other MIDAS clients */
-char *frontend_name = "neatdaq";
+char *frontend_name = "NEAT DAQ";
 
 /* The frontend file name, "they" say don't change it */
 char *frontend_file_name = __FILE__;
@@ -49,7 +48,7 @@ MVME_INTERFACE *myvme;
 
 /* GLOBALS */
 
-#define N_TDC  16
+#define N_DG 128
 #define N_QDC  32
 #define N_TDC1 16
 #define N_TDC2 128 
@@ -58,15 +57,14 @@ MVME_INTERFACE *myvme;
 //I DO NOT "understand" THIS part
 extern HNDLE hDB;
 HNDLE hSet;
-HNDLE hper;
+// HNDLE hper;
 TRIGGER_SETTINGS ts;
-PERIODIC_DISPLAY pd;
+// PERIODIC_DISPLAY pd;
 //continue
 
 /*VME BASE Addresses */
-DWORD V1290N_BASE_ADDR = 0xCCCC0000;
-DWORD V812_BASE_ADDR =   0xFFFF0000;
-DWORD V2495_BASE_ADDR =  0xDDDD0000;
+DWORD V1720_BASE_ADDR = 0xEEEE0000;
+DWORD V812_BASE_ADDR = 0xFFFF0000;
 
 // DWORD V2495_BASE_ADDR = 0x00000000;
 // DWORD V965_BASE_ADDR = 0x00000000;
@@ -116,20 +114,13 @@ int pvmeLocalSetup(int localNodeId);
 char *GetVMEPtr(int reomote_vme_adress, int remote_vme_am, int bsize, int pvmenum, int pvicnum);
 char *GetVMEPtr32(int remote_vme_adress, int remote_vme_am, int bsize, int pvmenum, int pvicnum);
 int pvmeRemoteSetup(int remoteNodeId);
-
-//New Stuff
-INT read_periodic_event(char *pevent, INT offset);
-INT get_user_parameters(void);
-
-
-
-
+//continue
 
 BANK_LIST trigger_bank_list[] = {
   // online data banks
- {"TDC0", TID_WORD, N_TDC, NULL} // V1290N
- ,
- {"QDC", TID_WORD, N_QDC, NULL} // V965
+ {"DG01", TID_WORD, N_DG, NULL} // V1720
+ // ,
+ // {"QDC1", TID_WORD, N_QDC, NULL} // V965
  ,
 };
 
@@ -150,27 +141,10 @@ EQUIPMENT equipment[] = {
 	   0,                    /* number of sub events */
 	   0,                    /* don't log history */
 	   "", "", "",},
-           read_trigger_event,    /*readout routine */
+       read_trigger_event,    /*readout routine */
 	   NULL, NULL, 
 	   trigger_bank_list,
 	  },
-
-   {"Periodic",              /* equipment name */
-      {2, 0,                 /* event ID, trigger mask */
-         "SYSTEM",           /* event buffer */
-         EQ_PERIODIC,          /* equipment type */
-         0,                  /* event source */
-         "MIDAS",            /* format */
-         TRUE,               /* enabled */
-         RO_ALWAYS,          /* read when running and on transitions */
-         1000,               /* read every sec */
-         0,                  /* stop run after this event limit */
-         0,                  /* number of sub events */
-         TRUE,               /* log history */
-         "", "", "",},
-      read_periodic_event,   /* readout routine */
-   },	
-
 
     {""}
 
@@ -179,3 +153,5 @@ EQUIPMENT equipment[] = {
 #ifdef __cplusplus
 }
 #endif
+
+

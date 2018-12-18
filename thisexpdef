@@ -1,0 +1,8 @@
+#----------ChangethisAccordingly------------------------###
+export MIDAS_EXPT_NAME=testdg
+#export MIDAS_EXPT_NAME=testtdc
+#export MIDAS_EXPTAB=$HOME/NewDaq/online/exptab
+#export MIDAS_EXPTAB=$HOME/NewDaq/development/frontend/TDC/exptab
+export MIDAS_EXPTAB=$HOME/NewDaq/development/frontend/digitizer/clean/exptab
+
+

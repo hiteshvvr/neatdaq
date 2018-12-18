@@ -1,0 +1,734 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"Initil",
+				"Initialize"
+			],
+			[
+				"tran",
+				"transffered_cycles"
+			],
+			[
+				"nuofevt",
+				"nu_of_evt"
+			],
+			[
+				"mea",
+				"measurements[1].GetMeasurement"
+			],
+			[
+				"nuofhits",
+				"num_of_hits"
+			],
+			[
+				"TDC",
+				"TDCV1290Measurement\t(TV1290Histogram.cxx)"
+			],
+			[
+				"USE",
+				"USE_V1290"
+			],
+			[
+				"V",
+				"V2495_BASE_ADDR"
+			],
+			[
+				"Equ",
+				"Equipment\t(frontend.c)"
+			],
+			[
+				"max",
+				"maxtimetag"
+			],
+			[
+				"u",
+				"uint32_t"
+			],
+			[
+				"mi",
+				"midastimestamp"
+			],
+			[
+				"num",
+				"numsamples"
+			],
+			[
+				"time",
+				"timetag"
+			],
+			[
+				"adc",
+				"adc_value"
+			],
+			[
+				"cha",
+				"channelData"
+			],
+			[
+				"v",
+				"v1720"
+			],
+			[
+				"TV",
+				"TV1720RawData"
+			],
+			[
+				"V812",
+				"V812_BASE_ADDR"
+			],
+			[
+				"CAEN",
+				"CAENVME_ReadRegister"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "frontend.c",
+			"settings":
+			{
+				"buffer_size": 15689,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/neatdaq/NewDaq/online/frontend.c",
+			"settings":
+			{
+				"buffer_size": 22020,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "v1720.c",
+			"settings":
+			{
+				"buffer_size": 15328,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		],
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					""
+				],
+				[
+					"Packages/Python/Python.sublime-build",
+					"Syntax Check"
+				]
+			],
+			[
+				"Packages/Python/Python.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 184.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"edit",
+				"Project: Edit Project"
+			],
+			[
+				"format",
+				"SublimeAStyleFormatter: Format Current File"
+			],
+			[
+				":w",
+				":w - Save"
+			],
+			[
+				"html",
+				"HTMLPrettify"
+			],
+			[
+				"for",
+				"SublimeAStyleFormatter: Format Current File"
+			],
+			[
+				"formatt",
+				"Clang Format: Format Selection"
+			],
+			[
+				":q",
+				":q - Close"
+			],
+			[
+				"form",
+				"SublimeAStyleFormatter: Format Current File"
+			],
+			[
+				"asty",
+				"SublimeAStyleFormatter: Format Current File"
+			],
+			[
+				"forma",
+				"SublimeAStyleFormatter: Format Current File"
+			],
+			[
+				"color",
+				"UI: Select Color Scheme"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"colo",
+				"UI: Select Color Scheme"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"cla",
+				"Clang Format: Format Selection"
+			],
+			[
+				"key",
+				"Preferences: Key Bindings"
+			],
+			[
+				":W",
+				":w - Save"
+			],
+			[
+				"Snippet: ",
+				"Snippet: CDATA"
+			],
+			[
+				"snipp",
+				"Snippet: #include <…>"
+			],
+			[
+				"theme",
+				"UI: Select Color Scheme"
+			],
+			[
+				"setting",
+				"Preferences: Settings"
+			],
+			[
+				"remove",
+				"Package Control: Remove Package"
+			],
+			[
+				"packe",
+				"Install Package Control"
+			],
+			[
+				"p",
+				"Preferences: Settings"
+			],
+			[
+				"pre",
+				"Preferences: Settings"
+			]
+		],
+		"width": 461.0
+	},
+	"console":
+	{
+		"height": 151.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720",
+		"/home/neatdaq/NewDaq/online"
+	],
+	"file_history":
+	[
+		"/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.h",
+		"/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/digi.sublime-project",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/analyz.txt",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/a.txt",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/frontend.c",
+		"/home/neatdaq/NewDaq/development/rootana/digitizer/1720/TV1720Correlations.cxx",
+		"/home/neatdaq/NewDaq/rootana/outfiles/data00091.csv",
+		"/home/neatdaq/NewDaq/development/rootana/TDC/TAnaManager.cxx",
+		"/home/neatdaq/Music/test/rootana/ana.cxx",
+		"/home/neatdaq/Music/test/rootana/midas2root.cxx",
+		"/home/neatdaq/Music/test/rootana/hrun.sh",
+		"/home/neatdaq/Music/test/rootana/anaDisplay.cxx",
+		"/home/neatdaq/Music/test/rootana/TAnaManager.hxx",
+		"/home/neatdaq/Music/test/rootana/TAnaManager.cxx",
+		"/home/neatdaq/Music/test/rootana/Makefile",
+		"/home/neatdaq/NewDaq/development/frontend/TDC/frontend.c",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/frontend.h",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/resources/mtest.html",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/experim.h",
+		"/home/neatdaq/NewDaq/development/frontend/TDC/frontend.h",
+		"/home/neatdaq/.config/sublime-text-3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/v1720.c",
+		"/home/neatdaq/packages/CAENVMELib-2.50/include/CAENVMEtypes.h",
+		"/home/neatdaq/packages/CAENVMELib-2.50/include/CAENVMEoslib.h",
+		"/home/neatdaq/packages/CAENVMELib-2.50/include/CAENVMElib.h",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/v2718.h",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/v2718.c",
+		"/home/neatdaq/NewDaq/development/rootana/digitizer/1720/testtree.C",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/v1720.h",
+		"/home/neatdaq/.bashrc",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/v1729.c",
+		"/home/neatdaq/NewDaq/rootana/outfiles/data00043.csv",
+		"/home/neatdaq/.config/terminator/config",
+		"/home/neatdaq/searchnote.txt",
+		"/home/neatdaq/NewDaq/online/v1720.c",
+		"/home/neatdaq/NewDaq/rootana/TV1290Histogram.h",
+		"/home/neatdaq/NewDaq/rootana/midas2root.cxx",
+		"/home/neatdaq/NewDaq/rootana/midas2root.c",
+		"/home/neatdaq/NewDaq/rootana/TV1290Histogram.cxx",
+		"/home/neatdaq/NewDaq/online/frontend.c",
+		"/home/neatdaq/packages/midas/include/mvmestd.h",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/mdel.sh",
+		"/home/neatdaq/NewDaq/development/frontend/digitizer/1720/Makefile",
+		"/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1720.c",
+		"/home/neatdaq/NewDaq/development/rootana/TDC/midas2root.cxx",
+		"/home/neatdaq/NewDaq/online/test/b.c",
+		"/home/neatdaq/NewDaq/online/test/a.c",
+		"/home/neatdaq/online/frontend.c",
+		"/home/neatdaq/online/Working Frontend 7.5.17/frontend.c",
+		"/home/neatdaq/NewDaq/development/rootana/TDC/try1/TV1290Histogram.cxx",
+		"/home/neatdaq/NewDaq/development/rootana/digitizer/1720/rootana1720/midas2root.cxx",
+		"/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.c~",
+		"/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1290N.h~",
+		"/home/neatdaq/NewDaq/development/rootana/TDC/a.sh",
+		"/home/neatdaq/NewDaq/development/rootana/TDC/ana.cxx",
+		"/home/neatdaq/rootana/files/neat00366.csv",
+		"/home/neatdaq/NewDaq/newana/Canvas_1.C",
+		"/home/neatdaq/NewDaq/conline/remove.sh",
+		"/home/neatdaq/NewDaq/conline/example1.html",
+		"/home/neatdaq/NewDaq/conline/experim.h",
+		"/home/neatdaq/NewDaq/conline/frontend.c",
+		"/home/neatdaq/NewDaq/conline/frontend.h",
+		"/home/neatdaq/sarafonline/frontend.h",
+		"/home/neatdaq/sarafonline/digitizer/1720/saraf1.sublime-project",
+		"/home/neatdaq/NewDaq/conline/example2.html",
+		"/home/neatdaq/NewDaq/conline/rmsth.sh",
+		"/home/neatdaq/NewDaq/conline/generalcustomexample.html",
+		"/home/neatdaq/NewDaq/conline/deletesth.sh",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/ana.cxx",
+		"/home/neatdaq/NewDaq/conline/deleteshm.sh",
+		"/home/neatdaq/NewDaq/conline/rmshm.sh",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/hrun.sh",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/TV1720Correlations.o",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/TV1720Correlations.h",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/TV1720Correlations.cxx",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/test.cxx",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/test",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/TAnaManager.hxx",
+		"/home/neatdaq/sarafonline/digitizer/1720/frontend.c",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/TAnaManager.cxx",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/example_output00000004.root",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/vmid.C",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/TV1720Waveform.o",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/TV1720Waveform.h",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/example_output00000009.root",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/example_output00000008.root",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/example_output00000007.root",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/example_output00000006.root",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/example_output00000005.root",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/deleteshm.sh",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/core",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/a.out",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/ana.exe",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/anaDisplay.exe",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/anaDisplay.cxx",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/Makefile",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/TAnaManager.o",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/output_000003.root",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/output_000002.root",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/output00000004.root",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/midas.log",
+		"/home/neatdaq/sarafonline/digitizer/1720/rootana1720/midas2root.exe",
+		"/home/neatdaq/sarafonline/Makefile",
+		"/home/neatdaq/NewDaq/packages/midas/drivers/vme/v1720.h",
+		"/home/neatdaq/Dropbox/Hitesh/Analysis/root/tree/hvector.C",
+		"/home/neatdaq/NewDaq/packages/rootana/libAnalyzer/TV1720RawData.cxx",
+		"/home/neatdaq/NewDaq/packages/rootana/include/TDataContainer.hxx",
+		"/home/neatdaq/NewDaq/packages/midas/examples/Triumf/c/fevmemodules.c",
+		"/usr/include/CAENDigitizerType.h",
+		"/home/neatdaq/conline/rootana/libAnalyzer/TGenericData.hxx",
+		"/home/neatdaq/NewDaq/packages/rootana/libAnalyzer/TV1720RawData.h",
+		"/home/neatdaq/rootana/libMidasInterface/TMidasEvent.h",
+		"/home/neatdaq/Dropbox/Hitesh/sarafonline/digitizer/1720/rootana1720/midas2root.cxx",
+		"/home/neatdaq/rootana/libMidasInterface/TMidasEvent.cxx",
+		"/home/neatdaq/rootana/libMidasInterface/TMidasEvent.o",
+		"/home/neatdaq/.config/sublime-text-3/Packages/SublimeAStyleFormatter/SublimeAStyleFormatter.sublime-settings",
+		"/home/neatdaq/Dropbox/Hitesh/Analysis/root/tree/basic.C",
+		"/home/neatdaq/NewDaq/packages/midas/include/mvmestd.h",
+		"/etc/wavedump/WaveDumpConfig.txt",
+		"/home/neatdaq/sarafonline/digitizer/1720/290118/frontend.c",
+		"/home/guest/packages/rootana/libAnalyzer/TV1720RawData.cxx",
+		"/home/guest/packages/rootana/include/TV1720RawData.h",
+		"/home/neatdaq/sarafonline/digitizer/1720/latestdata.txt",
+		"/home/neatdaq/OldDataAcquisition/rootana/ana_NEAT.cxx",
+		"/home/neatdaq/sarafonline/digitizer/1720/frontend.h",
+		"/home/neatdaq/.config/sublime-text-3/Packages/User/midas.sublime-build",
+		"/home/neatdaq/.config/sublime-text-3/Packages/User/rootana.sublime-build"
+	],
+	"find":
+	{
+		"height": 33.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"off",
+			"isrunstopped",
+			"03"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "frontend.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15689,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								13118,
+								13118
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 0,
+								"count": 991,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 7380.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 1,
+					"file": "/home/neatdaq/NewDaq/online/frontend.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 22020,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								21514,
+								21514
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 0,
+								"count": 1447,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 11117.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "v1720.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 15328,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								12132,
+								12132
+							]
+						],
+						"settings":
+						{
+							"WordCount":
+							{
+								"changes": 0,
+								"count": 920,
+								"modified": false,
+								"selection": false,
+								"status": -1,
+								"syntax": "plain text"
+							},
+							"syntax": "Packages/C Improved/C Improved.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5864.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 33.0
+	},
+	"input":
+	{
+		"height": 40.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.astyle_error_message":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 133.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/rootana.sublime-build",
+	"project": "digi.sublime-project",
+	"replace":
+	{
+		"height": 62.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"fr",
+				"frontend.h"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 211.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

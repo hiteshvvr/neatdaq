@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html class="mcss">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="midas.css">
+    <script src="controls.js"></script>
+    <script src="midas.js"></script>
+    <script src="mhttpd.js"></script>
+    <title>Example</title>
+</head>
+<meta http-equiv="refresh" content="10">
+
+<body class="mcss" onload="mhttpd_init('Test');">
+    <!-- header and side navigation will be filled in mhttpd_start -->
+    <div id="mheader"></div>
+    <div id="msidenav"></div>
+    <div id="mmain">
+        <table class="mtable" width="800">
+            <tr>
+                <th colspan="3" class="mtableheader">Board Settings</th>
+            </tr>
+            <tr>
+                <td style="width: 200px;">
+                    Run number:
+                </td>
+                <td align="left" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Runinfo/Run number"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Buffer Organization:
+                </td>
+                <td>
+                    Current Buffer Size is:
+                    <span style="background-color: #00FF00">
+                        <odb src="/Equipment/Trigger/Settings/v1720/BoardSettings/BufferOrganization"></odb>
+                </span>
+                </td>
+            </tr>
+            <tr>
+                <td style="width: 200px;">
+                    Select Buffer:
+                </td>
+                <td align="justify" ; valign="middle" ;>
+                    <button name="modbbutton" class="mbutton" data-odb-path="/Equipment/Trigger/Settings/v1720/BoardSettings/BufferOrganization" data-odb-value="10"> S:10-->1kS
+                    </button>
+                    <button name="modbbutton" class="mbutton" data-odb-path="/Equipment/Trigger/Settings/v1720/BoardSettings/BufferOrganization" data-odb-value="9"> S:09-->S
+                    </button>
+                    <button name="modbbutton" class="mbutton" data-odb-path="/Equipment/Trigger/Settings/v1720/BoardSettings/BufferOrganization" data-odb-value="8"> S:08-->S
+                    </button>
+                    <button name="modbbutton" class="mbutton" data-odb-path="/Equipment/Trigger/Settings/v1720/BoardSettings/BufferOrganization" data-odb-value="7"> S:07-->S
+                    </button>
+                </td>
+            </tr>
+            <tr>
+                <td align="left" ; valign="middle" ;>
+                    <font color="teal">Trigger Source </font>
+                </td>
+                <td align="justify" ; valign="middle" ;>
+                    Self &nbsp; &nbsp;&nbsp; &nbsp; FrontPanel &nbsp; &nbsp;&nbsp; &nbsp; Software &nbsp; &nbsp;&nbsp; &nbsp;Sin
+                </td>
+            </tr>
+            <tr>
+                <td align="center" ; valign="middle" ;>
+                </td>
+                <td align="justify" ; valign="middle" ;>
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/BoardSettings/TriggerSource[0]"></input>
+                    &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/BoardSettings/TriggerSource[1]"></input>
+                    &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/BoardSettings/TriggerSource[2]"></input>
+                    &nbsp; &nbsp;&nbsp; &nbsp; &emsp;
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/BoardSettings/TriggerSource[3]"></input>
+                </td>
+            </tr>
+            `
+            <tr>
+                <td style="width: 200px;">
+                    Post Trigger Samples<br>(for 1k 0xA):
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/BoardSettings/PostTriggerSamples" data-odb-editable="1"></div>
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td style="width: 200px;">
+                    Acquisition Control<br>(for 1k 0xA):
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/BoardSettings/AcquisitionControl" data-odb-editable="1"></div>
+                </td>
+            </tr>
+            <tr>
+            <tr>
+                <td align="center" ; valign="middle" ;>
+                    Reserved for some use:
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Equipment/Periodic/Display/v2495/TrigFreq" data-min-value 4" data-max-value="20000" data-color="lightgreen"></div>
+                    <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10" data-color="red"></div>
+                    <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10" data-color="red"></div>
+                    <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10" data-color="red"></div>
+                    <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10" data-color="red"></div>
+                    <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10" data-color="red"></div>
+                    <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10" data-color="red"></div>
+                </td>
+            </tr>
+        </table>
+        <!-- ======================  TABLE FOR CHANNEL    ============================ -->
+        <!-- ======================  TABLE FOR CHANNEL    ============================ -->
+        <!-- ======================  TABLE FOR CHANNEL    ============================ -->
+        <table class="mtable" width="800">
+            <tr>
+                <th colspan="10" class="mtableheader">Channel No.</th>
+            </tr>
+            <tr>
+                <td align="center" ; valign="middle" ;>
+                    <font color="teal">Enable Channel</font>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    0
+                    <!-- 0 &nbsp; -->
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    1
+                    <!-- 1 &ensp; -->
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    2
+                    <!-- 2 &emsp; -->
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    3
+                    <!-- 3 &ensp; -->
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    4
+                    <!-- 4 &nbsp; -->
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    5
+                    <!-- 5 &ensp; -->
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    6
+                    <!-- 6 &emsp; -->
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    7
+                    <!-- 7 &ensp; -->
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    All
+                </td>
+            </tr>
+            <tr>
+                <td align="center" ; valign="middle" ;>
+                    Enable/Disable
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Enable[0]"></input>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Enable[1]"></input>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Enable[2]"></input>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Enable[3]"></input>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Enable[4]"></input>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Enable[5]"></input>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Enable[6]"></input>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Enable[7]"></input>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <input type="checkbox" name="modbcheckbox" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Enable[8]"></input>
+                </td>
+            </tr>
+            <tr <tr>
+                <td align="center" ; valign="middle" ;">
+                    DC Offset
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/DCOffset[0]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/DCOffset[1]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/DCOffset[2]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/DCOffset[3]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/DCOffset[4]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/DCOffset[5]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/DCOffset[6]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/DCOffset[7]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/DCOffset[8]" data-odb-editable="1"></div>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" ; valign="middle" ;">
+                    Threshold
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Threshold[0]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Threshold[1]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Threshold[2]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Threshold[3]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Threshold[4]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Threshold[5]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Threshold[6]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Threshold[7]" data-odb-editable="1"></div>
+                </td>
+                <td align="center" ; valign="middle" ;>
+                    <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1720/ChannelSettings/Threshold[8]" data-odb-editable="1"></div>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>

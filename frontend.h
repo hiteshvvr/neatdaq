@@ -5,15 +5,10 @@
 #include "v1290N.h"
 #include "v812.h"
 #include "v2495.h"
-#include "v1720.h"
 
 
 #define V1290_CODE
 #define V2495_CODE
-#define V1720_CODE
-#define V1720_ROC_FW_VER	0x8124      /* R/W       ; D32 */ 
-
-
 // #define V812_CODE
 
 const int evtdebug = 1;
@@ -55,7 +50,6 @@ MVME_INTERFACE *myvme;
 /* GLOBALS */
 
 #define N_TDC  16
-#define N_DG 128
 #define N_QDC  32
 #define N_TDC1 16
 #define N_TDC2 128 
@@ -71,9 +65,8 @@ PERIODIC_DISPLAY pd;
 
 /*VME BASE Addresses */
 DWORD V1290N_BASE_ADDR = 0xCCCC0000;
-DWORD V812_BASE_ADDR   = 0xFFFF0000;
-DWORD V2495_BASE_ADDR  = 0xDDDD0000;
-DWORD V1720_BASE_ADDR  = 0xEEEE0000;
+DWORD V812_BASE_ADDR =   0xFFFF0000;
+DWORD V2495_BASE_ADDR =  0xDDDD0000;
 
 // DWORD V2495_BASE_ADDR = 0x00000000;
 // DWORD V965_BASE_ADDR = 0x00000000;
@@ -136,8 +129,6 @@ BANK_LIST trigger_bank_list[] = {
   // online data banks
  {"TDC0", TID_WORD, N_TDC, NULL} // V1290N
  ,
-{"DG01", TID_WORD, N_DG, NULL} // V1720
-,
  {"QDC", TID_WORD, N_QDC, NULL} // V965
  ,
 };

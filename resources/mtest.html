@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html class="mcss">
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="midas.css">
+   <script src="controls.js"></script>
+   <script src="midas.js"></script>
+   <script src="mhttpd.js"></script>
+   <title>Example</title>
+</head>
+<!-- <meta http-equiv="refresh" content="2"> -->
+
+<body class="mcss" onload="mhttpd_init('Test');">
+
+<!-- header and side navigation will be filled in mhttpd_start -->
+<div id="mheader"></div>
+<div id="msidenav"></div>
+
+<div id="mmain">
+
+<table style="height: 331px; border-color: #ed1c40; width: 679px; margin-left: auto; margin-right: auto;" border="2px">
+<tbody>
+<tr style="height: 39.5px;">
+<th style="width: 611px; background-color: #ed1c40; height: 39.5px; text-align: center; vertical-align: middle;" colspan="10">Channel Settings</th>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;"><strong>Settings</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 53.95px; height: 26px;"><strong>0</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 51.05px; height: 26px;"><strong>1</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>2</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>3</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>4</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>5</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>6</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>7</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>ALL</strong></td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">DCOffset</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;<a href="#top" target="_blank" rel="noopener">&lt;top&gt;</a></td>
+<td style="width: 51.05px; height: 26px;"><div name="modbvalue" data-odb-path="/Runinfo/Run number" ></div></td>
+<td style="width: 61px; height: 26px;">&nbsp;<div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v2495/FPGAEarlyWindow" data-odb-editable="1"></td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">Trigger Threshold</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Comp.</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Res</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Res</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Res</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Res</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Res</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+
+
+
+<table style="height: 331px; border-color: #ed1c40; width: 679px; margin-left: auto; margin-right: auto;">
+<!-- 
+<table style=text-align: left;
+  line-height: 40px;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 2px solid #ed1c40;
+  width: 500px;
+  margin: 50px auto;
+  border-radius: .25rem;> -->
+<tbody>
+<tr style="height: 39.5px;">
+<th style="width: 611px; background-color: #ed1c40; height: 39.5px; text-align: center; vertical-align: middle;" colspan="10">Channel Settings</th>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;"><strong>Settings</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 53.95px; height: 26px;"><strong>0</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 51.05px; height: 26px;"><strong>1</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>2</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>3</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>4</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>5</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>6</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>7</strong></td>
+<td style="background-color: green; text-align: center; vertical-align: middle; width: 61px; height: 26px;"><strong>ALL</strong></td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">DCOffset</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;<a href="#top" target="_blank" rel="noopener">&lt;top&gt;</a></td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">Trigger Threshold</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Comp.</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Res</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Res</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Res</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Res</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+<tr style="height: 26px;">
+<td style="background-color: yellow; width: 79px; height: 26px;">&nbsp;Res</td>
+<td style="width: 53.95px; height: 26px;">&nbsp;</td>
+<td style="width: 51.05px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+<td style="width: 61px; height: 26px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>

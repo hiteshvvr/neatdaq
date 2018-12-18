@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html class="mcss">
+<head>
+   <meta charset="UTF-8">
+   <link rel="stylesheet" href="midas.css">
+   <script src="controls.js"></script>
+   <script src="midas.js"></script>
+   <script src="mhttpd.js"></script>
+   <title>Example</title>
+</head>
+<meta http-equiv="refresh" content="200">
+
+<body class="mcss" onload="mhttpd_init('Test');">
+
+<!-- header and side navigation will be filled in mhttpd_start -->
+<div id="mheader"></div>
+<div id="msidenav"></div>
+
+<div id="mmain">
+   <table class="mtable" width="800">
+      <tr>
+         <th colspan="3" class="mtableheader">FPGA</th>
+      </tr>
+      <tr>
+         <td style="width: 200px;">
+            Run number:
+         </td>
+         <td>
+            <div name="modbvalue" data-odb-path="/Runinfo/Run number" ></div>
+         </td>
+      </tr>
+            <tr>
+         <td style="width: 200px;">
+            FirmWare REvision:
+         </td>
+         <td>
+            <div name="modbvalue" data-odb-path="/Equipment/Periodic/Display/v2495/FPGARevNo" ></div>
+                    
+         </td>
+      </tr>
+      <tr>
+         <td>
+          <font color = "teal">Early Window<br>(in multiple of 20ns)</font>
+            <!-- FPGA Early Time: -->
+         </td>
+         <td>
+            <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v2495/FPGAEarlyWindow" data-odb-editable="1"></div>
+         </td>
+      </tr>
+            <tr>
+         <td>
+          <font color = "teal">Late Window<br>(in multiple of 20ns)</font>
+            <!-- FPGA Early Time: -->
+         </td>
+         <td>
+            <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v2495/FPGALateWindow" data-odb-editable="1"></div>
+         </td>
+      </tr>
+      
+      <tr>
+         <td>
+            Mass Spectrum<br>from FPGA:
+         </td>
+         <td>
+            <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Equipment/Periodic/Display/v2495/TrigFreq" data-min-value 4" data-max-value="20000" data-color="lightgreen"></div>
+            <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10"
+                 data-color="red"></div>
+            <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10"
+                 data-color="red"></div>
+            <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10"
+                 data-color="red"></div>
+            <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10"
+                 data-color="red"></div>
+            <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10"
+                 data-color="red"></div>
+            <div name="modbvbar" style="width:10px;height:100px;" data-odb-path="/Runinfo/Run number" data-max-value="10"
+                 data-color="red"></div>                 
+         </td>
+      </tr>
+
+      <tr>
+         <td>
+            Frequency:
+         </td>
+         <td colspan="2" style="text-align: center;">
+          
+            <div name="modbthermo" style="width:60px;height:150px;float:left;" data-odb-path="/Equipment/Periodic/Display/v2495/ElecFreq" data-min-value="-10" data-max-value="300000" data-color="darkgreen" data-scale="1" data-value="1"></div>
+
+            <div name="modbthermo" style="width:60px;height:150px;" data-odb-path="/Equipment/Periodic/Display/v2495/IonFreq" data-min-value="-10" data-max-value="300000" data-color="darkblue" data-scale="1" data-value="1"></div>
+
+            <div name="modbthermo" style="width:60px;height:150px;float: right;" data-odb-path="/Equipment/Periodic/Display/v2495/TrigFreq" data-min-value="-10" data-max-value="300000" data-color="darkred" data-scale="1" data-value="1"></div>
+          
+          </td>
+      </tr>
+
+
+
+      <tr>
+         <td colspan="2" style="text-align: center;">
+            <button name="modbbutton" class="mbutton" data-odb-path="/Equipment/Trigger/Settings/v2495/FPGAEarlyWindow" data-odb-value="1">Set FPGA Early to 20ns
+            </button>
+            </button>
+            <button name="modbbutton" class="mbutton" data-odb-path="/Equipment/Trigger/Settings/v2495/FPGALateWindow" data-odb-value="50">Set FPGA Late to 1000ns
+            </button>
+            </button>
+         </td>
+      </tr>
+   </table>
+
+
+
+
+
+   <!-- Settings for TDC -->
+
+    <table class="mtable" width="800">
+      <tr>
+         <th colspan="2" class="mtableheader">TDC(These numbers are taken at the begining of Run)</th>
+      </tr>
+      <tr>
+         <td style="width: 200px;">
+            Run number:
+         </td>
+         <td>
+            <div name="modbvalue" data-odb-path="/Runinfo/Run number" ></div>
+         </td>
+      </tr>
+      <tr>
+         <td>
+          <font color = "darkyellow">OFFSet(ns)</font>
+            <!-- FPGA Early Time: -->
+         </td>
+         <td>
+            <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1290/TDCOffset" data-odb-editable="1"></div>
+         </td>
+      </tr>
+            <tr>
+         <td>
+          <font color = "darkyellow">Width(ns)</font>
+            <!-- FPGA Early Time: -->
+         </td>
+         <td>
+            <div name="modbvalue" data-odb-path="/Equipment/Trigger/Settings/v1290/TDCWidth" data-odb-editable="1"></div>
+         </td>
+      </tr>
+      
+    
+      </tr>
+   </table>
+</div>
+
+</body>
+</html>

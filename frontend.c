@@ -549,6 +549,7 @@ INT begin_of_run(INT run_number, char *error)
     mvme_get_dmode(myvme, &datmode);
     mvme_set_dmode(myvme, MVME_DMODE_D32);
     
+    setupdigitizer();
     //check the Digitizer
     printf("V1720\n");
     csr = mvme_read_value(myvme, V1720_BASE_ADDR, V1720_ROC_FW_VER);

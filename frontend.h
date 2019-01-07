@@ -127,6 +127,7 @@ int pvmeRemoteSetup(int remoteNodeId);
 //New Stuff
 INT read_periodic_event(char *pevent, INT offset);
 INT get_user_parameters(void);
+INT setupdigitizer(void);
 
 
 

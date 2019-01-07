@@ -357,6 +357,126 @@ INT get_user_parameters()
   return SUCCESS;
 }
 
+/****************************************************************************
+                       SETUP DIGITIZER 
+*****************************************************************************/
+
+INT setupdigitizer()
+{
+    int Status, size;
+    size = sizeof(TRIGGER_SETTINGS);
+    Status = db_get_record(hDB, hSet, &ts, &size, 0);
+
+    if (Status != DB_SUCCESS)
+    {
+        printf("\n\n\n");
+        printf("\n\n\n");
+        cm_msg(MERROR, "get_exp_settings", "Cannot retrive trigger settings REcord(Size of Trigger SEttings = %d)", size);
+        printf("Setup Digitizer Failed\n");
+        printf("\n\n\n");
+        return Status;
+    }
+
+    if(Status == DB_SUCCESS)
+    {
+    /************************************
+     * BOARD SETTINGS
+     * *********************************/
+
+    int buffersize = ts.v1720.boardsettings.bufferorganization;
+    int acqcontrol = ts.v1720.boardsettings.acquisitioncontrol;
+
+    if(buffersize!= 0xA) { ss_sleep(5000);
+        printf("Be Careful you are putting different buffer size than regular 1k Buffer\n");
+    }
+    v1720_RegisterWrite(myvme,V1720_BASE_ADDR,V1720_BUFFER_ORGANIZATION,buffersize);
+    printf("Be Careful you are putting different buffer size than regular 1k Buffer\n");
+
+    int trigsource = ts.v1720.boardsettings.triggersource[1];
+    /* if(trigsource == 1) */
+    v1720_RegisterWrite(myvme,V1720_BASE_ADDR,V1720_TRIG_SRCE_EN_MASK,0x40000000);
+    printf("Be Careful you are putting different buffer size than regular 1k Buffer\n");
+
+    int postsample = ts.v1720.boardsettings.posttriggersamples;
+    if(postsample <0 || postsample >> 500)
+    {
+        printf("Input proper post sample number\n");
+        exit(0);
+    }
+    v1720_RegisterWrite(myvme,V1720_BASE_ADDR,V1720_POST_TRIGGER_SETTING,postsample);
+
+
+    /************************************
+     * CHANNEL SETTINGS
+     * *********************************/
+
+    int i, val;
+
+    // Enable Channel
+    int chanmask=0;
+
+    for(i = 0; i<8; i++)
+    {
+        val = ts.v1720.channelsettings.enable[i];
+        chanmask = chanmask + val * 2^i;
+    }
+    ss_sleep(5000);
+    printf("\n\n \nYou are Enabling %d Channels \n",chanmask);
+
+    if(ts.v1720.channelsettings.enable[8] == 0)
+        v1720_RegisterWrite(myvme,V1720_BASE_ADDR,V1720_CHANNEL_EN_MASK ,0xFF);
+    else
+        v1720_RegisterWrite(myvme,V1720_BASE_ADDR,V1720_CHANNEL_EN_MASK ,chanmask);
+
+    // SEt DC Offset
+    int alldac = ts.v1720.channelsettings.dcoffset[8];
+    if(alldac!= 0 )
+    {
+        for(i = 0; i<8; i++)
+            v1720_ChannelDACSet(myvme, V1720_BASE_ADDR, i, alldac);
+    }
+    else
+    {
+        for(i = 0; i<8; i++)
+        {
+            int dac = ts.v1720.channelsettings.dcoffset[i];
+            v1720_ChannelDACSet(myvme, V1720_BASE_ADDR, i, dac);
+        }
+
+    }
+
+    if(ts.v1720.channelsettings.enable[9] == 0)
+        v1720_RegisterWrite(myvme,V1720_BASE_ADDR,V1720_CHANNEL_EN_MASK ,0xFF);
+    else
+        v1720_RegisterWrite(myvme,V1720_BASE_ADDR,V1720_CHANNEL_EN_MASK ,chanmask);
+
+    // SEt Channel Threshold
+ /*   int alldc = ts.v1720.channelsettings.dcoffset[8];
+    if(alldc != 0 )
+    {
+        for(i = 0; i<8; i++)
+            v1720_ChannelDACSet(myvme, V1720_BASE_ADDR, i, alldac);
+    }
+    else
+    {
+        for(i = 0; i<8; i++)
+        {
+            int dac = ts.v1720.channelsettings.dcoffset[i];
+            v1720_ChannelDACSet(myvme, V1720_BASE_ADDR, i, dac);
+        }
+
+
+    }
+
+
+
+    int a = V1720_RegisterRead(myvme,V1720_BASE_ADDR,mything);
+    */
+    }
+
+    return 0;
+}
+
 
 /****************************************************************************
                         BEGINING THE RUN

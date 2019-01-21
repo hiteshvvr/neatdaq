@@ -198,12 +198,20 @@ INT begin_of_run(INT run_number, char *error)
 
     // Setting the threshold
     // v1720_ChannelConfig(myvme,V1720_BASE_ADDR,0x2);
-    for (i = 1; i < 9; i++)
+  /*  for (i = 1; i < 9; i++)
     {
         //v1720_ChannelThresholdSet(myvme, V1720_BASE_ADDR, i, 0x0868);
-        v1720_ChannelThresholdSet(myvme, V1720_BASE_ADDR, i, 0x50);
-    }
+//        v1720_ChannelThresholdSet(myvme, V1720_BASE_ADDR, i, 0x50);
+    }*/
 
+    v1720_ChannelDACSet(myvme,V1720_BASE_ADDR,0,0xAA00);
+    v1720_ChannelDACSet(myvme,V1720_BASE_ADDR,1,0xAA00);
+    v1720_ChannelDACSet(myvme,V1720_BASE_ADDR,2,0xAA00);
+    v1720_ChannelDACSet(myvme,V1720_BASE_ADDR,3,0xAA00);
+    v1720_ChannelDACSet(myvme,V1720_BASE_ADDR,4,0x2000);
+    
+    v1720_ChannelThresholdSet(myvme,V1720_BASE_ADDR,4,0x6A4);
+    v1720_ChannelOUThresholdSet(myvme,V1720_BASE_ADDR,4,8);
     // Individual Settings for the Run:
     // Setting the post trigger value
     // v1720_RegisterWrite(myvme, V1720_BASE_ADDR, V1720_POST_TRIGGER_SETTING, 80);

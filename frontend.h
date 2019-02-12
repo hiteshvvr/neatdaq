@@ -49,6 +49,7 @@ MVME_INTERFACE *myvme;
 /* GLOBALS */
 
 #define N_DG 128
+#define N_TIME 128
 #define N_QDC  32
 #define N_TDC1 16
 #define N_TDC2 128 
@@ -118,7 +119,8 @@ int pvmeRemoteSetup(int remoteNodeId);
 
 BANK_LIST trigger_bank_list[] = {
   // online data banks
- {"DG01", TID_WORD, N_DG, NULL} // V1720
+ {"DG01", TID_WORD, N_DG, NULL}, // V1720
+ {"TIME", TID_WORD, N_TIME, NULL} // Absolute TIMESTAMP
  // ,
  // {"QDC1", TID_WORD, N_QDC, NULL} // V965
  ,

@@ -372,6 +372,7 @@ INT interrupt_configure(INT cmd, INT source, POINTER_T adr)
 INT read_trigger_event(char *pevent, INT off)
 {
     DWORD *tdata, *ddata, *pdata1, *pdata2, *pdata3, *evdata, *pdata, *pdata4;
+    DWORD *timedata;
     int nentry, nextra, dummyevent, fevtcnt, temp;
     int dtemp, dentry, dextra, devtcnt;
     int size_of_evt, nu_of_evt;
@@ -481,6 +482,21 @@ INT read_trigger_event(char *pevent, INT off)
 
     bk_close(pevent, ddata);
 #endif
+
+    //-----------------Bank for Absolute TimeStamp----------------------------------//
+    bk_create(pevent, "TIME", TID_DWORD, &timedata);
+
+    struct timespec tms;
+    if(clock_gettime(CLOCK_REALTIME,&tms)){return -1;}
+    uint32_t timeinsec = tms.tv_sec;
+    uint32_t timeinnsec = tms.tv_nsec;
+
+    *timedata = timeinsec; 
+    timedata++;
+    *timedata = timeinnsec;
+    timedata++;
+
+    bk_close(pevent, timedata);
 
 
     //-----------------Bank for DAQ event counter----------------------------------//

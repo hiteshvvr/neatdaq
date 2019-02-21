@@ -383,6 +383,20 @@ INT read_trigger_event(char *pevent, INT off)
     //initialize bank structure
     bk_init32(pevent);
 
+    //-----------------Bank for Absolute TimeStamp----------------------------------//
+
+    bk_create(pevent, "TIME", TID_DWORD, &timedata);
+    struct timespec tms;
+    if(clock_gettime(CLOCK_REALTIME,&tms)){return -1;}
+    uint32_t timeinsec = tms.tv_sec;
+    uint32_t timeinnsec = tms.tv_nsec;
+
+    *timedata = timeinsec; 
+    timedata++;
+    *timedata = timeinnsec;
+    timedata++;
+    bk_close(pevent, timedata);
+
     //-----------------Take Data from Digitizer----------------------------//
 #if defined V1720_CODE
     v1720_AcqCtl(myvme, V1720_BASE_ADDR, V1720_RUN_STOP);
@@ -482,24 +496,9 @@ INT read_trigger_event(char *pevent, INT off)
 
     bk_close(pevent, ddata);
 #endif
+    
 
-    //-----------------Bank for Absolute TimeStamp----------------------------------//
-    bk_create(pevent, "TIME", TID_DWORD, &timedata);
-
-    struct timespec tms;
-    if(clock_gettime(CLOCK_REALTIME,&tms)){return -1;}
-    uint32_t timeinsec = tms.tv_sec;
-    uint32_t timeinnsec = tms.tv_nsec;
-
-    *timedata = timeinsec; 
-    timedata++;
-    *timedata = timeinnsec;
-    timedata++;
-
-    bk_close(pevent, timedata);
-
-
-    //-----------------Bank for DAQ event counter----------------------------------//
+     //-----------------Bank for DAQ event counter----------------------------------//
     bk_create(pevent, "EVNT", TID_DWORD, &evdata);
     *evdata++ = event_counter_for_interface;
     bk_close(pevent, evdata);
@@ -509,7 +508,13 @@ INT read_trigger_event(char *pevent, INT off)
     // Generating a pulse
     CAENVME_SetOutputRegister((int) myvme->info, cvOut0Bit);
     CAENVME_SetOutputRegister((int) myvme->info, cvOut1Bit);
-    v1720_AcqCtl(myvme, V1720_BASE_ADDR, V1720_RUN_START);
+
+        v1720_AcqCtl(myvme, V1720_BASE_ADDR, V1720_RUN_START);
+
+
+
+
+    
     return bk_size(pevent);
 }
 

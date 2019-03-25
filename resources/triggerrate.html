@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<link rel="icon" href="favicon.png" type="image/png" />
+<link rel="stylesheet" href="mhttpd.css" type="text/css" />
+<link rel="stylesheet" href="midas.css" type="text/css" />
+<meta http-equiv="Refresh" content="1">
+<title>Trigger rate</title></head>
+<body><form name="form1" method="GET" action="Trigger%20rate">
+
+<script type="text/javascript" src="midas.js"></script>
+<script type="text/javascript" src="mhttpd.js"></script>
+<script>
+window.addEventListener("load", function(e) { mhttpd_init('History', 1000); });
+</script>
+<!-- header and side navigation will be filled in mhttpd_init -->
+<div id="mheader"></div>
+<div id="msidenav"></div>
+<div id="mmain">
+<table class="mtable"><tr><th class="mtableheader" colspan=2>History</th></tr><input type=hidden name=hscale value=600>
+</td></tr>
+<tr><td colspan=2>
+Group:
+<select title="Select group" name="fgroup" onChange="document.form1.submit()">
+<option selected value="Default">Default
+<option value="ALL">ALL
+</select>
+&nbsp;&nbsp;Panel:
+<select title="Select panel" name="fpanel" onChange="document.form1.submit()">
+<option selected value="Trigger rate">Trigger rate
+<option value="">- all -
+</select>
+<noscript>
+<input type=submit value="Go">
+</noscript>
+&nbsp;&nbsp;<input type="button" name="New" value="New" onClick="window.location.href='../?cmd=New'">
+<input type="submit" name="Cmd" value="Reset" onClick="document.form1.submit()">
+<input type="submit" name="Cmd" value="Query" onClick="document.form1.submit()">
+</td></tr>
+<tr><td>
+<input type=submit name=scale value=10m>
+<input type=submit name=scale value=1h>
+<input type=submit name=scale value=3h>
+<input type=submit name=scale value=12h>
+<input type=submit name=scale value=24h>
+<input type=submit name=scale value=3d>
+<input type=submit name=scale value=7d>
+<input type=submit name=shift value="<<<" title="go back in time to last available data for all variables on the plot">
+<input type=submit name=shift value="<<"  title="go back in time to last available data">
+<input type=submit name=shift value="<"   title="go back in time">
+<input type=submit name=shift value=" + " title="zoom in">
+<input type=submit name=shift value=" - " title="zoom out">
+<td>
+<input type=submit name=width value=Large>
+<input type=submit name=width value=Small>
+<input type=submit name=cmd value="Create ELog">
+<input type=submit name=cmd value=Config>
+<input type=submit name=cmd value=Export>
+</tr>
+<map name="Default/Trigger%20rate">
+  <area shape=rect coords="30,31,150,47" href="../HS/Default/Trigger%20rate?&scale=600&width=640&index=0">
+</map>
+<tr><td colspan=2><img src="../HS/Default/Trigger%20rate.gif?&scale=600&width=640" alt="Default/Trigger rate.gif" usemap="#Default/Trigger%20rate"></tr>
+</table>
+</div>
+</form>
+</body></html>

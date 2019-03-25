@@ -1,5 +1,7 @@
 odbedit -c "mkdir Custom"
 odbedit -c "create string Custom/FPGASettings"
 odbedit -c "create string Custom/DigiSettings"
+odbedit -c "create string Custom/FHistory"
 odbedit -c "set \"Custom/FPGASettings\" \"/home/neatdaq/NewDaq/development/frontend/both/resources/fpgasettings.html\""
 odbedit -c "set \"Custom/DigiSettings\" \"/home/neatdaq/NewDaq/development/frontend/both/resources/digisettings.html\""
+odbedit -c "set \"Custom/FHistory\" \"/home/neatdaq/NewDaq/development/ongithub/neatdaq/resources/triggerrate.html\""
